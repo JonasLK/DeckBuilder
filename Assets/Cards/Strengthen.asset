@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1809b7c988c0d3b4d9480fca674565a8, type: 3}
+  m_Name: Strengthen
+  m_EditorClassIdentifier: 
+  cardObject: {fileID: 7913917095547431756, guid: 70e47a0713c296e47af66d709e0be17f, type: 3}
+  cardName: StrengthenAttack
+  cardDiscription: <CardDiscriptionHere>
+  damageCard: 1
+  blockCard: 0
+  strengthenCard: 1
+  drawCardCard: 0
+  weakenCard: 0
+  exposeCard: 0
+  loseHalfBlockCard: 0
+  addCardCard: 0
+  upgraded: 0
+  forbidden: 0
+  nonPlayable: 0
+  cost: 1
+  blockValue: 0
+  attackValue: 10
+  attackTimes: 1
+  targetAmount: 1
+  targeting: 0
+  targetAll: 0
+  targetSelf: 0
+  targetEnemy: 1
+  targetMulti: 0
+  cardsToAdd: []
+  cardsToDraw: 0
+  strengthIncrease: 1
+  weakenDuration: 0
+  exposeDuration: 0
