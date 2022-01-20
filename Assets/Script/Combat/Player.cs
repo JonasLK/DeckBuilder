@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
 
     public void UpdateEnergyDisplay()
     {
-        energyDisplay.text = energy.ToString();
+        energyDisplay.text = energy.ToString() + "/" + startEnergy.ToString();
     }
 
     public void Death()

@@ -65,6 +65,7 @@ public class TurnManager : MonoBehaviour
             case CombatStateChain.endPlayerTurn:
                 for (int i = 0; i < CombatManager.pileAndHandManager.hand.Count; i++)
                 {
+                    print("Removing card from hand");
                     CombatManager.pileAndHandManager.RemoveCardFromHand(CombatManager.pileAndHandManager.hand[0], CombatManager.pileAndHandManager.gameObjectHand[0]);
                 }
                 currentAction = CombatStateChain.startEnemyTurn;
