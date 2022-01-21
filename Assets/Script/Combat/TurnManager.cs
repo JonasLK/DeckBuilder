@@ -63,7 +63,9 @@ public class TurnManager : MonoBehaviour
                 print("case CombatStateChain.playerAction:");
                 break;
             case CombatStateChain.endPlayerTurn:
-                for (int i = 0; i < CombatManager.pileAndHandManager.hand.Count; i++)
+                int cardsInHand = CombatManager.pileAndHandManager.hand.Count;
+                print(cardsInHand);
+                for (int i = 0; i < cardsInHand; i++)
                 {
                     print("Removing card from hand");
                     CombatManager.pileAndHandManager.RemoveCardFromHand(CombatManager.pileAndHandManager.hand[0], CombatManager.pileAndHandManager.gameObjectHand[0]);

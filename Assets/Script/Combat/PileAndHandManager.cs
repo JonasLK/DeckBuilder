@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PileAndHandManager : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class PileAndHandManager : MonoBehaviour
     public List<Card> discardPile;
     public List<Card> exilePile;
 
+    public TextMeshProUGUI deckCountText;
+    public TextMeshProUGUI discardCountText;
+    public TextMeshProUGUI exileCountText;
+
     public int maxHandSize;
     private int counter;
     private Card firstDeckCard;
@@ -17,11 +22,10 @@ public class PileAndHandManager : MonoBehaviour
     void Awake()
     {
         CombatManager.delayedStart += UpdateMaxHandSize;
-    }
-    
-    void Update()
-    {
-        
+
+        UpdateDiscardCountText();
+        UpdateDeckCountText();
+        UpdateExileCountText();
     }
 
     public void AddCardToHand(Card cardToAdd)
@@ -32,6 +36,7 @@ public class PileAndHandManager : MonoBehaviour
         gameObjectHand.Add(temp);
         cardToAdd.CardBaseAwake(temp.GetComponent<CardBase>());
         deckPile.Remove(cardToAdd);
+        UpdateDeckCountText();
     }
 
     public void RemoveCardFromHand(Card cardToAdd, GameObject self)
@@ -62,11 +67,15 @@ public class PileAndHandManager : MonoBehaviour
                 if(hand.Count < maxHandSize)
                 {
                     AddCardToHand(firstDeckCard);
+
                 }
                 else
                 {
                     exilePile.Add(firstDeckCard);
                     deckPile.Remove(firstDeckCard);
+
+                    UpdateDiscardCountText();
+                    UpdateDeckCountText();
                 }
             }
             else
@@ -84,10 +93,12 @@ public class PileAndHandManager : MonoBehaviour
         if(exile == true)
         {
             exilePile.Add(playedCard);
+            UpdateExileCountText();
         }
         else
         {
             discardPile.Add(playedCard);
+            UpdateDiscardCountText();
         }
         RemoveCardFromHand(playedCard, self);
     }
@@ -105,5 +116,24 @@ public class PileAndHandManager : MonoBehaviour
             deckPile.Add(temp);
             cardHolderList.Remove(temp);
         }
+
+        discardPile.Clear();
+        UpdateDiscardCountText();
+        UpdateDeckCountText();
+    }
+
+    public void UpdateDeckCountText()
+    {
+        deckCountText.text = deckPile.Count.ToString();
+    }
+
+    public void UpdateDiscardCountText()
+    {
+        discardCountText.text = discardPile.Count.ToString();
+    }
+
+    public void UpdateExileCountText()
+    {
+        exileCountText.text = exilePile.Count.ToString();
     }
 }
