@@ -55,9 +55,9 @@ public class Card : ScriptableObject
 
     public void CardBaseAwake(CardBase cardBase)
     {
+        CreateCard(cardBase);
         cardBase.cardName = cardName;
         cardBase.cardDiscription = cardDiscription;
-        CreateCard(cardBase);
     }
     public void CreateCard(CardBase cardBase)
     {

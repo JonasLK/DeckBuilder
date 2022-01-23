@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1809b7c988c0d3b4d9480fca674565a8, type: 3}
-  m_Name: Strengthen
+  m_Name: StrengthenAttack
   m_EditorClassIdentifier: 
   cardObject: {fileID: 7913917095547431756, guid: 70e47a0713c296e47af66d709e0be17f, type: 3}
   cardName: StrengthenAttack
-  cardDiscription: <CardDiscriptionHere>
+  cardDiscription: apply 1 strength, deal 10 damage
   damageCard: 1
   blockCard: 0
   strengthenCard: 1

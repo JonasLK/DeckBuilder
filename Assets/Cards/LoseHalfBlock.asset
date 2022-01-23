@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardObject: {fileID: 7913917095547431756, guid: 70e47a0713c296e47af66d709e0be17f, type: 3}
   cardName: LoseHalfBlock
-  cardDiscription: <CardDiscriptionHere>
+  cardDiscription: you now only lose half your block at the start of your turn
   damageCard: 0
   blockCard: 0
   strengthenCard: 0

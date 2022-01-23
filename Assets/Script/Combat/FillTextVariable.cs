@@ -27,6 +27,11 @@ public class FillTextVariable : MonoBehaviour
         {
             CombatManager.handParent = this.gameObject;
         }
+        else if (childNumber == 3)
+        {
+            yield return new WaitForSeconds(0.1f);
+            GetComponent<TextMeshProUGUI>().text = GetComponentInParent<CardBase>().cost.ToString();
+        }
     }
 
     // Update is called once per frame

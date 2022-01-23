@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardObject: {fileID: 7913917095547431756, guid: 70e47a0713c296e47af66d709e0be17f, type: 3}
   cardName: BlockDraw
-  cardDiscription: <CardDiscriptionHere>
+  cardDiscription: Gain 10 block and draw 1 card
   damageCard: 0
   blockCard: 1
   strengthenCard: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardObject: {fileID: 7913917095547431756, guid: 70e47a0713c296e47af66d709e0be17f, type: 3}
   cardName: MultiAllAttack
-  cardDiscription: <CardDiscriptionHere>
+  cardDiscription: Deal 3 damage 4 times
   damageCard: 1
   blockCard: 0
   strengthenCard: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
   cost: 1
   blockValue: 0
   attackValue: 3
-  attackTimes: 3
+  attackTimes: 4
   targetAmount: 1
   targeting: 0
   targetAll: 1
