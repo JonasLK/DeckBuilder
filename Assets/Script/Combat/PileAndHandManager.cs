@@ -18,7 +18,7 @@ public class PileAndHandManager : MonoBehaviour
     public int maxHandSize;
     private int counter;
     private Card firstDeckCard;
-    private List<Card> cardHolderList;
+    public List<Card> cardHolderList;
     void Awake()
     {
         CombatManager.delayedStart += UpdateMaxHandSize;
@@ -42,6 +42,7 @@ public class PileAndHandManager : MonoBehaviour
     public void RemoveCardFromHand(Card cardToAdd, GameObject self)
     {
         hand.Remove(cardToAdd);
+        exilePile.Add(cardToAdd);
         gameObjectHand.Remove(self);
         Destroy(self);
     }
@@ -55,6 +56,7 @@ public class PileAndHandManager : MonoBehaviour
     {
         if(deckPile.Count <= 0 && discardPile.Count <= 0)
         {
+            //player death
             return;
         }
 
@@ -63,7 +65,6 @@ public class PileAndHandManager : MonoBehaviour
             firstDeckCard = deckPile[0];
             if(firstDeckCard != null)
             {
-                print("drawing Card");
                 if(hand.Count < maxHandSize)
                 {
                     AddCardToHand(firstDeckCard);
@@ -80,7 +81,6 @@ public class PileAndHandManager : MonoBehaviour
             }
             else
             {
-                print("shuffeling deck");
                 ShuffleDiscardPileIntoDeck();
                 firstDeckCard = deckPile[0];
                 AddCardToHand(firstDeckCard);

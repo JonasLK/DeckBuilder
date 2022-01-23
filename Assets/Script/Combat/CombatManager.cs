@@ -36,10 +36,6 @@ public class CombatManager : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         delayStart();
         delayedStart();
-        foreach(Enemy enemy in enemies)
-        {
-            print(enemy);
-        }
         turnManager.StartCombatChain();
     }
 
@@ -55,6 +51,4 @@ public class CombatManager : MonoBehaviour
     {
         print("PlayerVictory");
     }
-
-    //state machine here
 }

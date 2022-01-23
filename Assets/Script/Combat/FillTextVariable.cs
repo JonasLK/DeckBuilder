@@ -33,10 +33,4 @@ public class FillTextVariable : MonoBehaviour
             GetComponent<TextMeshProUGUI>().text = GetComponentInParent<CardBase>().cost.ToString();
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
