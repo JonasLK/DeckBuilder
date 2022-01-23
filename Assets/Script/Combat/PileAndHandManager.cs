@@ -42,7 +42,7 @@ public class PileAndHandManager : MonoBehaviour
     public void RemoveCardFromHand(Card cardToAdd, GameObject self)
     {
         hand.Remove(cardToAdd);
-        exilePile.Add(cardToAdd);
+        discardPile.Add(cardToAdd);
         gameObjectHand.Remove(self);
         Destroy(self);
     }
