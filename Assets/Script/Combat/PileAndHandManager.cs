@@ -62,18 +62,15 @@ public class PileAndHandManager : MonoBehaviour
 
         for (int i = 0; i < cardAmount; i++)
         {
-            print(deckPile.Count);
             if(deckPile.Count > 0)
             {
                 firstDeckCard = deckPile[0];
                 if (hand.Count < maxHandSize)
                 {
                     AddCardToHand(firstDeckCard);
-                    print("drawing");
                 }
                 else
                 {
-                    print("overdrawing");
                     exilePile.Add(firstDeckCard);
                     deckPile.Remove(firstDeckCard);
 
@@ -83,7 +80,6 @@ public class PileAndHandManager : MonoBehaviour
             }
             else
             {
-                print("need to shuffle deck");
                 ShuffleDiscardPileIntoDeck();
                 firstDeckCard = deckPile[0];
                 AddCardToHand(firstDeckCard);
