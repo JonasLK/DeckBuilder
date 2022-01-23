@@ -66,8 +66,8 @@ public class TurnManager : MonoBehaviour
                 int cardsInHand = CombatManager.pileAndHandManager.hand.Count;
                 for (int i = 0; i < cardsInHand; i++)
                 {
+                    CombatManager.pileAndHandManager. discardPile.Add(CombatManager.pileAndHandManager.hand[0]);
                     CombatManager.pileAndHandManager.RemoveCardFromHand(CombatManager.pileAndHandManager.hand[0], CombatManager.pileAndHandManager.gameObjectHand[0]);
-                    CombatManager.pileAndHandManager.discardPile.Add(CombatManager.pileAndHandManager.hand[0]);
                 }
                 currentAction = CombatStateChain.startEnemyTurn;
                 break;
