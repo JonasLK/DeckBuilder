@@ -54,6 +54,7 @@ public class PileAndHandManager : MonoBehaviour
 
     public void DrawCardFromDeckPile(int cardAmount)
     {
+        //print("drawing card");
         if(deckPile.Count <= 0 && discardPile.Count <= 0)
         {
             //player death
@@ -62,16 +63,18 @@ public class PileAndHandManager : MonoBehaviour
 
         for (int i = 0; i < cardAmount; i++)
         {
-            firstDeckCard = deckPile[0];
-            if(firstDeckCard != null)
+            print(deckPile.Count);
+            if(deckPile.Count > 0)
             {
-                if(hand.Count < maxHandSize)
+                firstDeckCard = deckPile[0];
+                if (hand.Count < maxHandSize)
                 {
                     AddCardToHand(firstDeckCard);
-
+                    print("drawing");
                 }
                 else
                 {
+                    print("overdrawing");
                     exilePile.Add(firstDeckCard);
                     deckPile.Remove(firstDeckCard);
 
@@ -81,6 +84,7 @@ public class PileAndHandManager : MonoBehaviour
             }
             else
             {
+                print("need to shuffle deck");
                 ShuffleDiscardPileIntoDeck();
                 firstDeckCard = deckPile[0];
                 AddCardToHand(firstDeckCard);
@@ -105,13 +109,16 @@ public class PileAndHandManager : MonoBehaviour
 
     public void ShuffleDiscardPileIntoDeck()
     {
+        //print("shuffling deck");
         foreach (Card card in discardPile)
         {
+            //print("adding card to templist");
             cardHolderList.Add(card);
         }
 
         for (int i = 0; i < discardPile.Count; i++)
         {
+            //print("adding card to deckpile");
             Card temp = cardHolderList[Random.Range(0, cardHolderList.Count)];
             deckPile.Add(temp);
             cardHolderList.Remove(temp);
